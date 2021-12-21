@@ -9,7 +9,7 @@ resource "aws_elasticache_replication_group" "this" {
   automatic_failover_enabled = var.automatic_failover_enabled # must be set to true for native Redis cluster
   multi_az_enabled = var.multi_az_enabled
   apply_immediately = var.apply_immediately
-  availability_zones = var.azs
+  preferred_availability_zones = var.azs
   kms_key_id = format("arn:aws:kms:%s:%s:key/%s", var.region, var.account_id, var.kms_key_id)
   at_rest_encryption_enabled = var.at_rest_encryption_enabled 
   #number_cache_clusters = var.number_cache_clusters
