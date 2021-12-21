@@ -88,6 +88,16 @@ variable "number_cache_clusters" {
   type = string
 }
 
+variable "replicas_per_node_group" {
+  description = "Number of replica nodes in each node group(shards)"
+  type = string
+}
+
+variable "num_node_groups" {
+  description = "Number of node groups (shards)"
+  type = string
+}
+
 variable "snapshot_retention_limit" {
   description = "The number of days for which ElastiCache will retain automatic cache cluster snapshots before deleting them."
   type = string

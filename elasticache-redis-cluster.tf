@@ -24,6 +24,10 @@ resource "aws_elasticache_replication_group" "this" {
     aws_elasticache_subnet_group.this
   ]
 
+  lifecycle {
+    ignore_changes = [number_cache_clusters]
+  }
+
   tags = merge(var.tags, tomap({Name = format("%s-%s-ec", var.prefix, var.replication_group_id)}))
 }
 
