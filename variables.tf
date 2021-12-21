@@ -67,10 +67,10 @@ variable "apply_immediately" {
   default = false
 }
 
-variable "azs" {
-  description = "Availability Zone List"
-  type = list(string)
-}
+#variable "azs" {
+#  description = "Availability Zone List"
+#  type = list(string)
+#}
 
 variable "kms_key_id" {
   description = "The ARN of the key for encrypting at rest, Can be specified only if at_rest_encryption_enabled = true"
