@@ -105,7 +105,7 @@ variable "snapshot_retention_limit" {
 }
 
 variable "subnet_ids" {
-  description = "Subnet list for RDS Aurora"
+  description = "Subnet list for Elasticache redis cluster"
   type = list(string)
 }
 
