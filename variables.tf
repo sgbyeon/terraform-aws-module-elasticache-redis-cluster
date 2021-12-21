@@ -3,6 +3,12 @@ variable "account_id" {
   type = string
 }
 
+variable "region" {
+  description = "AWS Region"
+  type = string
+  default = ""
+}
+
 variable "prefix" {
   description = "prefix for aws resources and tags"
   type = string
@@ -80,6 +86,12 @@ variable "at_rest_encryption_enabled" {
 variable "number_cache_clusters" {
   description = "The number of cache clusters, If Multi-AZ is enabled, the value of this parameter must be at least 2"
   type = string
+}
+
+variable "snapshot_retention_limit" {
+  description = "The number of days for which ElastiCache will retain automatic cache cluster snapshots before deleting them."
+  type = string
+  default = "7"
 }
 
 variable "subnet_ids" {
