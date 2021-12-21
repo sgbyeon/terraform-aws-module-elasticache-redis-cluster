@@ -67,11 +67,6 @@ variable "apply_immediately" {
   default = false
 }
 
-#variable "azs" {
-#  description = "Availability Zone List"
-#  type = list(string)
-#}
-
 variable "kms_key_id" {
   description = "The ARN of the key for encrypting at rest, Can be specified only if at_rest_encryption_enabled = true"
   type = string
@@ -82,11 +77,6 @@ variable "at_rest_encryption_enabled" {
   type = bool
   default = true
 }
-
-#variable "number_cache_clusters" {
-#  description = "The number of cache clusters, If Multi-AZ is enabled, the value of this parameter must be at least 2"
-#  type = string
-#}
 
 variable "replicas_per_node_group" {
   description = "Number of replica nodes in each node group(shards)"

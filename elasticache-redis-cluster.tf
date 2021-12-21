@@ -9,11 +9,9 @@ resource "aws_elasticache_replication_group" "this" {
   automatic_failover_enabled = var.automatic_failover_enabled # must be set to true for native Redis cluster
   multi_az_enabled = var.multi_az_enabled
   apply_immediately = var.apply_immediately
-  #availability_zones = var.azs
   subnet_group_name = aws_elasticache_subnet_group.this.name # availablity_zones 를 직접 명시 할 수 없고 서브넷을 지정해서 Multi-AZ 구성, 값이 세팅되지 않으면 default subnet를 찾음
   kms_key_id = format("arn:aws:kms:%s:%s:key/%s", var.region, var.account_id, var.kms_key_id)
   at_rest_encryption_enabled = var.at_rest_encryption_enabled 
-  #number_cache_clusters = var.number_cache_clusters
   snapshot_retention_limit = var.snapshot_retention_limit
 
   cluster_mode {
