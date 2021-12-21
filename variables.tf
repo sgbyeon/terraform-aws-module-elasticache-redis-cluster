@@ -83,10 +83,10 @@ variable "at_rest_encryption_enabled" {
   default = true
 }
 
-variable "number_cache_clusters" {
-  description = "The number of cache clusters, If Multi-AZ is enabled, the value of this parameter must be at least 2"
-  type = string
-}
+#variable "number_cache_clusters" {
+#  description = "The number of cache clusters, If Multi-AZ is enabled, the value of this parameter must be at least 2"
+#  type = string
+#}
 
 variable "replicas_per_node_group" {
   description = "Number of replica nodes in each node group(shards)"

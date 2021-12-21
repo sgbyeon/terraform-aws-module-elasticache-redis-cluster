@@ -12,7 +12,7 @@ resource "aws_elasticache_replication_group" "this" {
   availability_zones = var.azs
   kms_key_id = format("arn:aws:kms:%s:%s:key/%s", var.region, var.account_id, var.kms_key_id)
   at_rest_encryption_enabled = var.at_rest_encryption_enabled 
-  number_cache_clusters = var.number_cache_clusters
+  #number_cache_clusters = var.number_cache_clusters
   snapshot_retention_limit = var.snapshot_retention_limit
 
   cluster_mode {
