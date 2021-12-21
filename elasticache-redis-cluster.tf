@@ -32,7 +32,7 @@ resource "aws_elasticache_replication_group" "this" {
 }
 
 resource "aws_elasticache_subnet_group" "this" {
-  name = format("%s-%s-sn", var.prefix, var.cluster_name)
+  name = format("%s-%s-sn", var.prefix, var.replication_group_id)
   subnet_ids = var.subnet_ids
 
   tags = merge(var.tags, tomap({Name = format("%s-%s-sng", var.prefix, var.replication_group_id)}))
