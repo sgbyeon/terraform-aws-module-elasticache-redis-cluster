@@ -1,5 +1,5 @@
 resource "aws_elasticache_replication_group" "this" {
-  replication_group_id = var.replication_group_id
+  replication_group_id = format("%s-%s-elasticache", var.prefix, var.replication_group_id)
   replication_group_description = var.replication_group_description
   engine = var.engine
   engine_version = var.engine_version
