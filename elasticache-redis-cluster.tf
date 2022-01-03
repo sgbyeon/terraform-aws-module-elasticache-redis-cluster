@@ -27,12 +27,12 @@ resource "aws_elasticache_replication_group" "this" {
     ignore_changes = [number_cache_clusters]
   }
 
-  tags = merge(var.tags, tomap({Name = format("%s-%s-ec", var.prefix, var.replication_group_id)}))
+  tags = merge(var.tags, tomap({Name = format("%s.%s.elasticache", var.prefix, var.replication_group_id)}))
 }
 
 resource "aws_elasticache_subnet_group" "this" {
   name = format("%s-%s-sn", var.prefix, var.replication_group_id)
   subnet_ids = var.subnet_ids
 
-  tags = merge(var.tags, tomap({Name = format("%s-%s-sng", var.prefix, var.replication_group_id)}))
+  tags = merge(var.tags, tomap({Name = format("%s.%s.subnet-groups", var.prefix, var.replication_group_id)}))
 }
