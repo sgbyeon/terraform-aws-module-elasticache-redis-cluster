@@ -108,3 +108,8 @@ variable "cidr" {
   description = "The CIDR block to accept"
   type = list(string)
 }
+
+variable "vpc_id" {
+  description = "vpc id"
+  type = string
+}
