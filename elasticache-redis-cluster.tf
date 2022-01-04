@@ -13,6 +13,7 @@ resource "aws_elasticache_replication_group" "this" {
   kms_key_id = format("arn:aws:kms:%s:%s:key/%s", var.region, var.account_id, var.kms_key_id)
   at_rest_encryption_enabled = var.at_rest_encryption_enabled 
   snapshot_retention_limit = var.snapshot_retention_limit
+  security_group_ids = compact(aws_security_group.this.*.id)
 
   cluster_mode {
     replicas_per_node_group = var.replicas_per_node_group
@@ -20,7 +21,8 @@ resource "aws_elasticache_replication_group" "this" {
   }
 
   depends_on = [
-    aws_elasticache_subnet_group.this
+    aws_elasticache_subnet_group.this,
+    aws_security_group.this
   ]
 
   lifecycle {

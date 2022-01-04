@@ -103,3 +103,8 @@ variable "tags" {
   description = "tag map"
   type = map(string)
 }
+
+variable "cidr" {
+  description = "The CIDR block to accept"
+  type = list(string)
+}
