@@ -21,8 +21,8 @@ resource "aws_security_group" "this" {
 
 resource "aws_security_group_rule" "this" {
   type = "ingress"
-  from_port = 3306
-  to_port = 3306
+  from_port = 6379
+  to_port = 6379
   protocol = "tcp"
   cidr_blocks = var.cidr
   security_group_id = aws_security_group.this.id
