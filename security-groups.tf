@@ -1,5 +1,5 @@
 resource "aws_security_group" "this" {
-  name = format("%s.%s.aurora.security-groups", var.prefix, var.cluster_name)
+  name = format("%s.%s.elasticache.security-groups", var.prefix, var.replication_group_id)
   vpc_id = var.vpc_id
 
   ingress {
@@ -16,7 +16,7 @@ resource "aws_security_group" "this" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  tags = merge(var.tags, tomap({Name = format("%s.%s.aurora.security-groups", var.prefix, var.cluster_name)}))
+  tags = merge(var.tags, tomap({Name = format("%s.%s.elasticache.security-groups", var.prefix, var.replication_group_id)}))
 }
 
 resource "aws_security_group_rule" "this" {
